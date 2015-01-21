@@ -41,6 +41,12 @@
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
+    UIBezierPath *roundedRectFrame = [UIBezierPath bezierPathWithRoundedRect:self.bounds
+                                                                cornerRadius:5.0];
+    [[UIColor clearColor] setStroke];
+    [roundedRectFrame addClip];
+    [roundedRectFrame stroke];
+    
     
     if ([self.card isFaceUp]) {
         UIImage *cardImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@%@",@[@"?",@"A",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"J",@"Q",@"K"][self.card.rank]
