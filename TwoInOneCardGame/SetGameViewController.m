@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 Ken Zhou. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "SetGameViewController.h"
 
-@interface SecondViewController ()
+@interface SetGameViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation SetGameViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

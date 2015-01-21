@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  CardGameViewController.h
 //  TwoInOneCardGame
 //
 //  Created by Ken Zhou on 17/01/2015.
@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+@interface CardGameViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate>
+
+
+
+
 
 
 @end
-

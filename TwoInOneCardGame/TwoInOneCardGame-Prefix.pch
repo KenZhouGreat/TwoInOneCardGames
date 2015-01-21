@@ -1,0 +1,23 @@
+//
+//  TwoInOneCardGame-Prefix.pch
+//  TwoInOneCardGame
+//
+//  Created by Ken Zhou on 17/01/2015.
+//  Copyright (c) 2015 Ken Zhou. All rights reserved.
+//
+
+#ifndef TwoInOneCardGame_TwoInOneCardGame_Prefix_pch
+#define TwoInOneCardGame_TwoInOneCardGame_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#endif
+
+
+#define CLR_SYS_BLUE [UIColor colorWithRed:0.0/255.0 green:122.0/255.0 blue:1.0 alpha:1.0]
+#define CLR_WASH_GREEN [UIColor colorWithRed:171.0/255.0 green:255.0/255.0 blue:208.0/255.0 alpha:1.0]
+
+#endif

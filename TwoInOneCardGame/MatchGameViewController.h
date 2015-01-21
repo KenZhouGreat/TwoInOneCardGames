@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CardGameViewController.h"
+#import "CardGameViewController_Protected.m"
 
-@interface FirstViewController : UIViewController
+@interface MatchGameViewController : CardGameViewController
 
 
 @end
