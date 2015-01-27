@@ -12,8 +12,13 @@
 
 #pragma mark - Setters
 
-- (void)setCard:(PlayingCard *)card{
-    _card = card;
+- (void)setRank:(NSInteger)rank{
+    _rank = rank;
+    [self setNeedsDisplay];
+}
+
+-(void)setSuit:(NSString *)suit{
+    _suit = suit;
     [self setNeedsDisplay];
 }
 
@@ -48,9 +53,9 @@
     [roundedRectFrame stroke];
     
     
-    if ([self.card isFaceUp]) {
-        UIImage *cardImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@%@",@[@"?",@"A",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"J",@"Q",@"K"][self.card.rank]
-        , @{@"♠︎":@"S",@"♣︎":@"C",@"♥︎":@"H",@"♦︎":@"D"}[self.card.suit]]];
+    if ([self isFaceUp]) {
+        UIImage *cardImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@%@",@[@"?",@"A",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"J",@"Q",@"K"][self.rank]
+        , @{@"♠︎":@"S",@"♣︎":@"C",@"♥︎":@"H",@"♦︎":@"D"}[self.suit]]];
         if (cardImage) {
             [cardImage drawInRect:self.bounds];
         }
@@ -69,7 +74,7 @@
 
 #pragma mark - initializer
 -(void)setUp{
-    
+
 }
 
 -(void)awakeFromNib{

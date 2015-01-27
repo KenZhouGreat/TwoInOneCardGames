@@ -35,6 +35,10 @@
                                             <subviews>
                                                 <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5kX-eq-R00" customClass="MatchCardView">
                                                     <rect key="frame" x="0.0" y="0.0" width="60" height="80"/>
+                                                    <gestureRecognizers/>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="bOS-Zu-DOe" appends="YES" id="hyv-tv-6sJ"/>
+                                                    </connections>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -46,6 +50,7 @@
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fbH-Cy-Qyo">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="10"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionReusableView>
                                 <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3oO-fW-yhK">
@@ -89,12 +94,17 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Match" image="first" id="acW-dT-cKf"/>
                     <connections>
-                        <outlet property="cardCollectionView" destination="l09-RV-lYz" id="tVs-5G-oRM"/>
+                        <outlet property="cardCollectionView" destination="l09-RV-lYz" id="5EZ-DA-8hB"/>
                         <outlet property="dealButton" destination="Ea4-3Q-mhg" id="gLR-zi-Osk"/>
                         <outlet property="scoreLabel" destination="YIQ-Si-3Bs" id="2h7-f2-iFD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="bOS-Zu-DOe">
+                    <connections>
+                        <action selector="flipCardAction:" destination="9pv-A4-QxB" id="Y7r-39-jzI"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="432" y="-300"/>
         </scene>
@@ -152,7 +162,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Set" image="second" id="cPa-gy-q4n"/>
                     <connections>
-                        <outlet property="cardCollectionView" destination="MY4-xK-BZc" id="wzf-ox-FdL"/>
+                        <outlet property="cardCollectionView" destination="MY4-xK-BZc" id="J9k-r0-wyo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>

@@ -12,7 +12,8 @@
 
 @interface MatchCardView : UIView
 
-@property (nonatomic, strong) PlayingCard *card;
+@property (nonatomic, strong) NSString *suit;
+@property (nonatomic) NSInteger rank;
 @property (nonatomic, getter=isFaceUp) BOOL faceUp;
 @property (nonatomic, getter=isMatched) BOOL matched;
 @property (nonatomic, getter=isCompared) BOOL compared;

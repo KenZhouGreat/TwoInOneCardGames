@@ -13,5 +13,11 @@
 @interface CardGameViewController()
 
 @property (nonatomic, strong) CardGame *game;
+@property (strong, nonatomic) IBOutlet UICollectionView *cardCollectionView;
+
+
+-(void)updateCell:(UICollectionViewCell *)cell
+        usingCard:(Card *)card
+        animation:(BOOL)animation; //abstract
 
 @end

@@ -7,16 +7,17 @@
 //
 
 #import "CardGameViewController.h"
+#import "CardGameViewController_Protected.m"
 #import "CardMatchingGame.h"
 
 @interface CardGameViewController ()
 
-@property (strong, nonatomic) IBOutlet UICollectionView *cardCollectionView;
+
 
 @property (strong, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (strong, nonatomic) IBOutlet UIButton *dealButton;
 
-@property (strong, nonatomic) CardGame *game;
+
 
 @end
 
@@ -92,6 +93,17 @@
                                    reason:@"You should override this method in the subclass"
                                  userInfo:nil];
 }
+
+-(void)updateCell:(UICollectionViewCell *)cell
+        usingCard:(Card *)card
+        animation:(BOOL)animation
+{
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException
+                                   reason:@"You should override this method in the subclass"
+                                 userInfo:nil];
+}
+
+
 
 #pragma mark - lifecycle calls
 

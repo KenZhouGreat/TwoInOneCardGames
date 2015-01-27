@@ -33,8 +33,12 @@
             if ([view isKindOfClass:[MatchCardView class]]) {
                 MatchCardView *cardView = (MatchCardView *)view;
                 PlayingCard *card = (PlayingCard *)[self.game cardAtIndex:indexPath.row];
-                card.faceUp = YES;
-                [cardView setCard:card];
+                cardView.suit = card.suit;
+                cardView.rank = card.rank;
+                cardView.unplayable = card.unplayable;
+                cardView.faceUp = card.faceUp;
+                
+                [cardView setTag:indexPath.row];
             }
         }
     }
@@ -42,6 +46,63 @@
     return cell;
 }
 
+- (IBAction)flipCardAction:(id)sender {
+    //get the indexpath of the card get flliped
+    UITapGestureRecognizer *tapRecongnizer = (UITapGestureRecognizer *)sender;
+    NSIndexPath *indexPath = [self.cardCollectionView indexPathForItemAtPoint:[tapRecongnizer locationInView:self.cardCollectionView]];
+    
+    
+    if (indexPath) {
+        //call the flip card from the Game model with specific index
+        [self.game flipCardAtIndex:indexPath.row];        
+        [self updateCell:[self.cardCollectionView cellForItemAtIndexPath:indexPath] usingCard:[self.game cardAtIndex:indexPath.row] animation:YES];
+        
+        
+    }
+    
+    //remember the animation should only happen for that spcific cell, could be resolved by adding that selected/flipped card window
+}
+
+
+
+-(void)updateUI{
+    
+    //update card in the matching queue
+    
+    //update other data label on the screen
+    
+}
+
+
+-(void)updateCell:(UICollectionViewCell *)cell usingCard:(Card *)card animation:(BOOL)animation{
+    for (MatchCardView *cardView in cell.contentView.subviews) {
+        if ([cardView isKindOfClass:[MatchCardView class]]) {
+            PlayingCard *pc = (PlayingCard *)card;
+            
+            if (!animation) {
+                cardView.suit = pc.suit;
+                cardView.faceUp = pc.faceUp;
+                cardView.rank = pc.rank;
+                cardView.unplayable = pc.unplayable;
+            }
+            else{
+                [UIView transitionWithView:cardView
+                                  duration:0.5
+                                   options:UIViewAnimationOptionTransitionFlipFromRight
+                                animations:^{
+                                    cardView.suit = pc.suit;
+                                    cardView.faceUp = pc.faceUp;
+                                    cardView.rank = pc.rank;
+                                    cardView.unplayable = pc.unplayable;
+                                }
+                                completion:nil];
+                
+            }
+            
+            
+        }
+    }
+}
 
 
 
