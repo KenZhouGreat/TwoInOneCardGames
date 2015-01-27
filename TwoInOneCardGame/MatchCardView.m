@@ -8,6 +8,9 @@
 
 #import "MatchCardView.h"
 
+
+
+
 @implementation MatchCardView
 
 #pragma mark - Setters
@@ -27,15 +30,15 @@
      [self setNeedsDisplay];
 }
 
-- (void)setMatched:(BOOL)matched{
-    _matched =matched;
-//    [self setNeedsDisplay];
-}
-
-- (void)setCompared:(BOOL)compared{
-    _compared = compared;
+- (void)setMatchStatus:(CardMatchStatus)matchStatus{
+    _matchStatus = matchStatus;
     [self setNeedsDisplay];
 }
+
+//- (void)setCompared:(BOOL)compared{
+//    _compared = compared;
+//    [self setNeedsDisplay];
+//}
 
 - (void)setUnplayable:(BOOL)unplayable{
     _unplayable = unplayable;
@@ -55,7 +58,7 @@
     
     if ([self isFaceUp]) {
         UIImage *cardImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@%@",@[@"?",@"A",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"J",@"Q",@"K"][self.rank]
-        , @{@"♠︎":@"S",@"♣︎":@"C",@"♥︎":@"H",@"♦︎":@"D"}[self.suit]]];
+                                                  , @{@"♠︎":@"S",@"♣︎":@"C",@"♥︎":@"H",@"♦︎":@"D"}[self.suit]]];
         if (cardImage) {
             [cardImage drawInRect:self.bounds];
         }
@@ -66,6 +69,42 @@
             [backImage drawInRect:self.bounds];
         }
     }
+    
+    if (self.matchStatus == MatchStatusMatched) {
+        //add a green mask
+        CGRect rect = self.bounds;
+        UIGraphicsBeginImageContext(rect.size);
+        CGContextRef context = UIGraphicsGetCurrentContext();
+
+        CGContextSetFillColorWithColor(context, [[UIColor colorWithRed:0/255.0 green:255.0/255.0 blue:0/255.0 alpha:0.5] CGColor]);
+        CGContextFillRect(context, rect);
+        
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        [image drawInRect:self.bounds];
+    }
+    else if (self.matchStatus == MatchedStatusUnmatched){
+        //add a red mask
+        //add a green mask
+        CGRect rect = self.bounds;
+        UIGraphicsBeginImageContext(rect.size);
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        
+        CGContextSetFillColorWithColor(context, [[UIColor colorWithRed:255.0/255.0 green:0/255.0 blue:0/255.0 alpha:0.5] CGColor]);
+        CGContextFillRect(context, rect);
+        
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        [image drawInRect:self.bounds];
+    }
+    else{
+        //do nothing
+    }
+    
+    
+    
 }
 
 

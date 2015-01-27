@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum{
+    FirstMatchStatus = 1,
+    MatchStatusNone = FirstMatchStatus,
+    MatchStatusMatched,
+    MatchedStatusUnmatched,
+    LastMatchStatus = MatchedStatusUnmatched
+}CardMatchStatus;
+
 @interface Card : NSObject
 
 
@@ -16,7 +24,7 @@
 
 @property (nonatomic, getter = isFaceUp) BOOL faceUp;
 @property (nonatomic, getter = isUnplayable) BOOL unplayable;
-@property (nonatomic, getter = isMatched) BOOL matched;
+@property (nonatomic) CardMatchStatus matchStatus;
 @property (nonatomic, getter = isCompared) BOOL compared;
 
 -(int)match: (NSArray *)otherCards;

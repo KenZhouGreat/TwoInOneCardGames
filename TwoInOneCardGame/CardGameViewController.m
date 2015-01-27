@@ -14,8 +14,8 @@
 
 
 
-@property (strong, nonatomic) IBOutlet UILabel *scoreLabel;
-@property (strong, nonatomic) IBOutlet UIButton *dealButton;
+
+
 
 
 

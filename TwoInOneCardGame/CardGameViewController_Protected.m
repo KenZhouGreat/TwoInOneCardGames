@@ -14,6 +14,8 @@
 
 @property (nonatomic, strong) CardGame *game;
 @property (strong, nonatomic) IBOutlet UICollectionView *cardCollectionView;
+@property (strong, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (strong, nonatomic) IBOutlet UIButton *dealButton;
 
 
 -(void)updateCell:(UICollectionViewCell *)cell

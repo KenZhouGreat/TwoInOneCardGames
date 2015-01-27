@@ -15,8 +15,8 @@
 @property (nonatomic, strong) NSString *suit;
 @property (nonatomic) NSInteger rank;
 @property (nonatomic, getter=isFaceUp) BOOL faceUp;
-@property (nonatomic, getter=isMatched) BOOL matched;
-@property (nonatomic, getter=isCompared) BOOL compared;
+@property (nonatomic) CardMatchStatus matchStatus;
+//@property (nonatomic, getter=isCompared) BOOL compared;
 @property (nonatomic, getter=isUnplayable) BOOL unplayable;
 
 @end

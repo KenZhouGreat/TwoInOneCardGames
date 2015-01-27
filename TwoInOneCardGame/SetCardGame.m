@@ -10,11 +10,18 @@
 #import "CardGame_Protected.m"
 #import "SetGameCard.h"
 
+
+
+
+
 @implementation SetCardGame
 
 #define MATCH_BONUS 4
 #define MISMATCH_PENALTY 2
 #define FLIP_COST 0
+
+
+
 
 - (void) flipCardAtIndex:(NSUInteger)index{
     self.gameStarted = YES;
@@ -50,6 +57,7 @@
                         c.faceUp = !c.faceUp;
                     }
                     self.score -= MISMATCH_PENALTY;
+                    
                 }
                 
                 //Matched A, B, C ... for score

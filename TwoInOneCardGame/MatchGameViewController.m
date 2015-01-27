@@ -37,6 +37,7 @@
                 cardView.rank = card.rank;
                 cardView.unplayable = card.unplayable;
                 cardView.faceUp = card.faceUp;
+                cardView.matchStatus = card.matchStatus;
                 
                 [cardView setTag:indexPath.row];
             }
@@ -54,11 +55,19 @@
     
     if (indexPath) {
         //call the flip card from the Game model with specific index
-        [self.game flipCardAtIndex:indexPath.row];        
-        [self updateCell:[self.cardCollectionView cellForItemAtIndexPath:indexPath] usingCard:[self.game cardAtIndex:indexPath.row] animation:YES];
+        Card *cardBeforeFlip = [self.game cardAtIndex:indexPath.row];
+        BOOL beforeFlipCardFace = [cardBeforeFlip isFaceUp];
+        BOOL beforeFlipCardUnplayable = [cardBeforeFlip isUnplayable];
+        [self.game flipCardAtIndex:indexPath.row];
+        if (![[self.game cardAtIndex:indexPath.row] isFaceUp] == beforeFlipCardFace && !beforeFlipCardUnplayable) {
+            [self updateCell:[self.cardCollectionView cellForItemAtIndexPath:indexPath] usingCard:[self.game cardAtIndex:indexPath.row] animation:YES];
+        }
         
         
     }
+    
+    [self updateUI];
+   
     
     //remember the animation should only happen for that spcific cell, could be resolved by adding that selected/flipped card window
 }
@@ -66,42 +75,57 @@
 
 
 -(void)updateUI{
-    
-    //update card in the matching queue
+    for (UICollectionViewCell *cell in [self.cardCollectionView visibleCells]) {
+        NSIndexPath *indexPath = [self.cardCollectionView indexPathForCell:cell];
+        Card *card = [self.game cardAtIndex:indexPath.item];
+
+        [self updateCell:cell usingCard:card animation:NO];
+    }
     
     //update other data label on the screen
+    
+    //update score
+    [self.scoreLabel setText:[NSString stringWithFormat:@"Score: %d", self.game.score]];
     
 }
 
 
 -(void)updateCell:(UICollectionViewCell *)cell usingCard:(Card *)card animation:(BOOL)animation{
-    for (MatchCardView *cardView in cell.contentView.subviews) {
-        if ([cardView isKindOfClass:[MatchCardView class]]) {
-            PlayingCard *pc = (PlayingCard *)card;
-            
-            if (!animation) {
-                cardView.suit = pc.suit;
-                cardView.faceUp = pc.faceUp;
-                cardView.rank = pc.rank;
-                cardView.unplayable = pc.unplayable;
-            }
-            else{
-                [UIView transitionWithView:cardView
-                                  duration:0.5
-                                   options:UIViewAnimationOptionTransitionFlipFromRight
-                                animations:^{
-                                    cardView.suit = pc.suit;
-                                    cardView.faceUp = pc.faceUp;
-                                    cardView.rank = pc.rank;
-                                    cardView.unplayable = pc.unplayable;
-                                }
-                                completion:nil];
+    
+    
+        
+    
+        
+        for (MatchCardView *cardView in cell.contentView.subviews) {
+            if ([cardView isKindOfClass:[MatchCardView class]]) {
+                PlayingCard *pc = (PlayingCard *)card;
+                
+                if (!animation) {
+                    cardView.suit = pc.suit;
+                    cardView.faceUp = pc.faceUp;
+                    cardView.rank = pc.rank;
+                    cardView.unplayable = pc.unplayable;
+                    cardView.matchStatus = pc.matchStatus;
+                }
+                else{
+                    [UIView transitionWithView:cardView
+                                      duration:0.5
+                                       options:UIViewAnimationOptionTransitionFlipFromRight
+                                    animations:^{
+                                        cardView.suit = pc.suit;
+                                        cardView.faceUp = pc.faceUp;
+                                        cardView.rank = pc.rank;
+                                        cardView.unplayable = pc.unplayable;
+                                        cardView.matchStatus = pc.matchStatus;
+                                    }
+                                    completion:nil];
+                    
+                }
+                
                 
             }
-            
-            
         }
-    }
+    
 }
 
 

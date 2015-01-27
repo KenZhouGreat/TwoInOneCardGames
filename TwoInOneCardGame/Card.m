@@ -10,6 +10,13 @@
 
 @implementation Card
 
+-(CardMatchStatus)matchStatus{
+    if (!_matchStatus) {
+        _matchStatus = MatchStatusNone;
+    }
+    return _matchStatus;
+}
+
 -(int)match:(NSArray *)otherCards
 {
     int score = 0;
