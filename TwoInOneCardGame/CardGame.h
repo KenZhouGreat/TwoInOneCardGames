@@ -20,6 +20,9 @@
 
 -(Card *)cardAtIndex: (NSUInteger)index;
 
+-(NSIndexSet *)indexesOfMatchedCards;
+
+
 @property (nonatomic, readonly) int score;
 @property (nonatomic, getter = isGameStarted, readonly) BOOL gameStarted;
 @property (nonatomic, readonly) NSAttributedString *verbose;

@@ -10,7 +10,7 @@
 #import "CardGameViewController.h"
 #import "CardGameViewController_Protected.m"
 
-@interface MatchGameViewController : CardGameViewController
+@interface MatchGameViewController : CardGameViewController<UIAlertViewDelegate>
 
 
 @end

@@ -82,8 +82,9 @@
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     // the user clicked OK
     if (buttonIndex == 1) {
-        NSLog(@"button ok clicked");
-#warning implement redeal logic
+        self.game = nil;
+        [self.cardCollectionView reloadData];
+        [self updateUI];
     }
 }
 

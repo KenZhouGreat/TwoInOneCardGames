@@ -52,7 +52,27 @@
     [self cardAtIndex:index].faceUp = ! [self cardAtIndex:index].faceUp;
 }
 
+- (void)cleanMatchedCards{
+    NSMutableIndexSet *matchedCardsIndexes = [[NSMutableIndexSet alloc] init];
+    for (int i = 0; i < [self.cards count];i++) {
+        Card *c = [self cardAtIndex:i];
+        if (c.matchStatus == MatchStatusMatched) {
+            [matchedCardsIndexes addIndex:i];
+        }
+    }
+    [self.cards removeObjectsAtIndexes:matchedCardsIndexes];
+}
 
+-(NSIndexSet *)indexesOfMatchedCards{
+    NSMutableIndexSet *matchedCardsIndexes = [[NSMutableIndexSet alloc] init];
+    for (int i = 0; i < [self.cards count];i++) {
+        Card *c = [self cardAtIndex:i];
+        if (c.matchStatus == MatchStatusMatched) {
+            [matchedCardsIndexes addIndex:i];
+        }
+    }
+    return matchedCardsIndexes;
+}
 
 
 @end
