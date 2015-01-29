@@ -34,5 +34,9 @@
     return self;
 }
 
++(NSInteger)maxNumberOfCards{
+    return (LastShape + 1) * (LastColour + 1) * (LastShade + 1) * 3;
+}
+
 
 @end

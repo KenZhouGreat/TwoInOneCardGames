@@ -12,7 +12,7 @@
 
 @interface MatchGameViewController ()
 @property (strong, nonatomic) IBOutlet UISegmentedControl *gameModeSelector;
-@property (strong, nonatomic) IBOutlet UILabel *lbl_cardsLeft;
+
 
 @end
 
@@ -32,7 +32,7 @@
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    NSInteger remainingNumberOfCards = [[self.game cards] count];
+    NSInteger remainingNumberOfCards = [self.game cardsLeft];
     return remainingNumberOfCards < NUMBER_OF_INITIAL_CELLS ? remainingNumberOfCards : NUMBER_OF_INITIAL_CELLS;
 }
 
@@ -89,7 +89,7 @@
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
             
-            NSUInteger cardCountBeforeUpdate = [self.game.cards count];
+            NSUInteger cardCountBeforeUpdate = [self.game cardsLeft];
             [self.cardCollectionView performBatchUpdates:^(void){
                 
                 NSIndexSet *indexesOfMatchedCards = [self.game indexesOfMatchedCards];
@@ -102,7 +102,7 @@
                 [self.game cleanMatchedCards];
                 [self.cardCollectionView deleteItemsAtIndexPaths:indexArrayToDelete];
                 
-                if (NUMBER_OF_INITIAL_CELLS <= [self.game.cards count]) {
+                if (NUMBER_OF_INITIAL_CELLS <= [self.game cardsLeft]) {
                     
                     NSMutableArray *indexArrayToInsert = [[NSMutableArray alloc] init];
                     for(int i = 0;i < [indexArrayToDelete count] ;i++){
@@ -113,7 +113,7 @@
                 }
                 else{
                     NSMutableArray *indexArrayToInsert = [[NSMutableArray alloc] init];
-                    for(int i = 0;i < (int)( [indexArrayToDelete count] + [self.game.cards count] - NUMBER_OF_INITIAL_CELLS) ;i++){
+                    for(int i = 0;i < (int)( [indexArrayToDelete count] + [self.game cardsLeft] - NUMBER_OF_INITIAL_CELLS) ;i++){
                         [indexArrayToInsert addObject:[NSIndexPath indexPathForRow:[self.cardCollectionView numberOfItemsInSection:0] - i - 1  inSection:0]];
                     }
                     
@@ -121,8 +121,8 @@
                 }
                 
             }completion:^(BOOL hasCompleted){
-                [self.lbl_cardsLeft setText:[NSString stringWithFormat:@"Cards left: %ld", [self.game.cards count]]];
-                if ([self.game.cards count] == 0 && cardCountBeforeUpdate != 0) {
+                [self.lbl_cardsLeft setText:[NSString stringWithFormat:@"Cards left: %ld", [self.game cardsLeft]]];
+                if ([self.game cardsLeft] == 0 && cardCountBeforeUpdate != 0) {
                     [[[UIAlertView alloc] initWithTitle:@"Congratulations"
                                                 message:@"You have matched all the cards! Click 'Ok' to start again."
                                                delegate:self
@@ -171,7 +171,7 @@
     self.gameModeSelector.enabled = !self.game.gameStarted;
     [self.gameModeSelector setSelectedSegmentIndex:[(CardMatchingGame *)self.game gameMode]];
     
-    [self.lbl_cardsLeft setText:[NSString stringWithFormat:@"Cards left: %ld", [self.game.cards count]]];
+    [self.lbl_cardsLeft setText:[NSString stringWithFormat:@"Cards left: %ld", [self.game cardsLeft]]];
     
 }
 

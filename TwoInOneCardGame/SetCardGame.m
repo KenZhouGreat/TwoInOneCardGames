@@ -9,6 +9,7 @@
 #import "SetCardGame.h"
 #import "CardGame_Protected.m"
 #import "SetGameCard.h"
+#import "SetGameCardDeck.h"
 
 
 
@@ -20,7 +21,10 @@
 #define MISMATCH_PENALTY 2
 #define FLIP_COST 0
 
-
+- (id)init{
+    self = [super initWithCardCount:[SetGameCardDeck maxNumberOfCards] usingDeck:[[SetGameCardDeck alloc] init]];
+    return self;
+}
 
 
 - (void) flipCardAtIndex:(NSUInteger)index{

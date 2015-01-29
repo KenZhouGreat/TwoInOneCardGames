@@ -74,5 +74,9 @@
     return matchedCardsIndexes;
 }
 
+- (NSInteger)cardsLeft{
+    return [self.cards count];
+}
+
 
 @end

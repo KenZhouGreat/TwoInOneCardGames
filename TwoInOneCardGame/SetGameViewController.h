@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CardGameViewController.h"
+#import "CardGameViewController_Protected.m"
 
 @interface SetGameViewController : CardGameViewController
 

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Card.h"
 #import "CardGame.h"
-#import "CardGame_Protected.m"
+
 
 
 typedef enum {

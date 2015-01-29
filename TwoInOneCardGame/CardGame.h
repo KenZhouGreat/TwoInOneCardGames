@@ -22,6 +22,10 @@
 
 -(NSIndexSet *)indexesOfMatchedCards;
 
+-(void)cleanMatchedCards;
+
+-(NSInteger)cardsLeft;
+
 
 @property (nonatomic, readonly) int score;
 @property (nonatomic, getter = isGameStarted, readonly) BOOL gameStarted;

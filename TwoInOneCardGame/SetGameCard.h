@@ -12,10 +12,10 @@
 
 typedef enum {
     FirstShape = 0,
-    SetShapeTriangle = FirstShape,
-    SetShapeSquare,
-    SetShapeCircle,
-    LastShape = SetShapeCircle
+    SetShapeDimond = FirstShape,
+    SetShapeSquiggle,
+    SetShapeOval,
+    LastShape = SetShapeOval
 }ShapeType;
 
 @property (nonatomic) ShapeType  shape;
@@ -25,8 +25,8 @@ typedef enum {
     FirstColour = 0,
     SetColourRed = FirstColour,
     SetColourGreen,
-    SetColourBlue,
-    LastColour = SetColourBlue
+    SetColourPurple,
+    LastColour = SetColourPurple
 }ColourType;
 
 @property (nonatomic) ColourType colour;

@@ -10,4 +10,6 @@
 
 @interface SetGameCardDeck : Deck
 
++(NSInteger)maxNumberOfCards;
+
 @end

@@ -10,4 +10,6 @@
 
 @interface SetCardGame : CardGame
 
+-(id)init;
+
 @end

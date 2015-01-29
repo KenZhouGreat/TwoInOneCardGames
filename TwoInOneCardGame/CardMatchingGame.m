@@ -7,6 +7,7 @@
 //
 
 #import "CardMatchingGame.h"
+#import "CardGame_Protected.m"
 #import "PlayingCardDeck.h"
 
 
@@ -14,7 +15,7 @@
 @implementation CardMatchingGame
 
 -(id)init{
-    self = [self initWithCardCount:[PlayingCardDeck maxCardCount] usingDeck:[[PlayingCardDeck alloc] init]];
+    self = [super initWithCardCount:[PlayingCardDeck maxCardCount] usingDeck:[[PlayingCardDeck alloc] init]];
     return self;
 }
 

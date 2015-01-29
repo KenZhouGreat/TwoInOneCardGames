@@ -28,15 +28,15 @@
         
         if (self.shade != SetShadeNone ) {
             switch (self.shape) {
-                case SetShapeCircle:
+                case SetShapeOval:
                     baseString = @"●";
                     break;
                     
-                case SetShapeSquare:
+                case SetShapeSquiggle:
                     baseString = @"■";
                     break;
                     
-                case SetShapeTriangle:
+                case SetShapeDimond:
                     baseString = @"▲";
                     break;
                     
@@ -48,15 +48,15 @@
         else{
             switch (self.shape) {
                     
-                case SetShapeCircle:
+                case SetShapeOval:
                     baseString = @"○";
                     break;
                     
-                case SetShapeSquare:
+                case SetShapeSquiggle:
                     baseString = @"◻︎";
                     break;
                     
-                case SetShapeTriangle:
+                case SetShapeDimond:
                     baseString = @"△";
                     break;
                     
@@ -91,8 +91,8 @@
         //set colour
         UIColor *patternColour;
         switch (self.colour) {
-            case SetColourBlue:
-                patternColour = [UIColor blueColor];
+            case SetColourPurple:
+                patternColour = [UIColor purpleColor];
                 break;
                 
             case SetColourGreen:

@@ -16,6 +16,7 @@
 @property (strong, nonatomic) IBOutlet UICollectionView *cardCollectionView;
 @property (strong, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (strong, nonatomic) IBOutlet UIButton *dealButton;
+@property (strong, nonatomic) IBOutlet UILabel *lbl_cardsLeft;
 
 
 -(void)updateCell:(UICollectionViewCell *)cell

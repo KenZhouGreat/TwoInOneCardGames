@@ -15,6 +15,6 @@
 @property (readwrite, nonatomic, getter = isGameStarted) BOOL gameStarted;
 @property (nonatomic, readwrite) NSAttributedString *verbose;
 
--(void)cleanMatchedCards;
+
 
 @end
