@@ -16,4 +16,8 @@
 @property (nonatomic) ShadeType shadeType;
 @property (nonatomic) ShapeType shapeType;
 
+@property (nonatomic, getter=isFaceUp) BOOL faceUp;
+@property (nonatomic) CardMatchStatus matchStatus;
+@property (nonatomic, getter=isUnplayable) BOOL unplayable;
+
 @end

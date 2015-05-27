@@ -10,6 +10,7 @@
 
 @interface SetCardGame : CardGame
 
+@property (nonatomic) NSInteger numberOfCardsInCollectionView;
 -(id)init;
 
 @end

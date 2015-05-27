@@ -12,8 +12,6 @@
 		5B42153B1A69F659006EE452 /* MatchGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B42153A1A69F659006EE452 /* MatchGameViewController.m */; };
 		5B42153E1A69F659006EE452 /* SetGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B42153D1A69F659006EE452 /* SetGameViewController.m */; };
 		5B4215411A69F659006EE452 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B42153F1A69F659006EE452 /* Main.storyboard */; };
-		5B4215431A69F659006EE452 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B4215421A69F659006EE452 /* Images.xcassets */; };
-		5B4215461A69F659006EE452 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B4215441A69F659006EE452 /* LaunchScreen.xib */; };
 		5B4215521A69F659006EE452 /* TwoInOneCardGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4215511A69F659006EE452 /* TwoInOneCardGameTests.m */; };
 		5B4215601A69FE36006EE452 /* CardGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B42155F1A69FE36006EE452 /* CardGameViewController.m */; };
 		5B4215A61A6A47B8006EE452 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B4215971A6A47B8006EE452 /* Card.m */; };
@@ -82,7 +80,6 @@
 		5B4216B21A6B7C40006EE452 /* AD in Resources */ = {isa = PBXBuildFile; fileRef = 5B4216731A6B7C40006EE452 /* AD */; };
 		5B4216B31A6B7C40006EE452 /* AH in Resources */ = {isa = PBXBuildFile; fileRef = 5B4216741A6B7C40006EE452 /* AH */; };
 		5B4216B41A6B7C40006EE452 /* AS in Resources */ = {isa = PBXBuildFile; fileRef = 5B4216751A6B7C40006EE452 /* AS */; };
-		5B4216B51A6B7C40006EE452 /* IconJoker.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B4216761A6B7C40006EE452 /* IconJoker.png */; };
 		5B4216B61A6B7C40006EE452 /* JC in Resources */ = {isa = PBXBuildFile; fileRef = 5B4216771A6B7C40006EE452 /* JC */; };
 		5B4216B71A6B7C40006EE452 /* JD in Resources */ = {isa = PBXBuildFile; fileRef = 5B4216781A6B7C40006EE452 /* JD */; };
 		5B4216B81A6B7C40006EE452 /* JH in Resources */ = {isa = PBXBuildFile; fileRef = 5B4216791A6B7C40006EE452 /* JH */; };
@@ -96,6 +93,11 @@
 		5B4216C01A6B7C40006EE452 /* QH in Resources */ = {isa = PBXBuildFile; fileRef = 5B4216811A6B7C40006EE452 /* QH */; };
 		5B4216C11A6B7C40006EE452 /* QS in Resources */ = {isa = PBXBuildFile; fileRef = 5B4216821A6B7C40006EE452 /* QS */; };
 		5B8A72901A7A17D5006FBC44 /* SetCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A728F1A7A17D5006FBC44 /* SetCardView.m */; };
+		5BF542DE1B06E4430088162E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BF542DD1B06E4430088162E /* Images.xcassets */; };
+		5BF542E11B06E69B0088162E /* dollarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BF542DF1B06E69B0088162E /* dollarIcon.png */; };
+		5BF542E21B06E69B0088162E /* dollarIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BF542E01B06E69B0088162E /* dollarIcon@2x.png */; };
+		5BF542E51B06E6A30088162E /* gameIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BF542E31B06E6A30088162E /* gameIcon.png */; };
+		5BF542E61B06E6A30088162E /* gameIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BF542E41B06E6A30088162E /* gameIcon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,8 +121,6 @@
 		5B42153C1A69F659006EE452 /* SetGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetGameViewController.h; sourceTree = "<group>"; };
 		5B42153D1A69F659006EE452 /* SetGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetGameViewController.m; sourceTree = "<group>"; };
 		5B4215401A69F659006EE452 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5B4215421A69F659006EE452 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		5B4215451A69F659006EE452 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		5B42154B1A69F659006EE452 /* TwoInOneCardGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwoInOneCardGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B4215501A69F659006EE452 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B4215511A69F659006EE452 /* TwoInOneCardGameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwoInOneCardGameTests.m; sourceTree = "<group>"; };
@@ -204,7 +204,6 @@
 		5B4216731A6B7C40006EE452 /* AD */ = {isa = PBXFileReference; lastKnownFileType = file; path = AD; sourceTree = "<group>"; };
 		5B4216741A6B7C40006EE452 /* AH */ = {isa = PBXFileReference; lastKnownFileType = file; path = AH; sourceTree = "<group>"; };
 		5B4216751A6B7C40006EE452 /* AS */ = {isa = PBXFileReference; lastKnownFileType = file; path = AS; sourceTree = "<group>"; };
-		5B4216761A6B7C40006EE452 /* IconJoker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconJoker.png; sourceTree = "<group>"; };
 		5B4216771A6B7C40006EE452 /* JC */ = {isa = PBXFileReference; lastKnownFileType = file; path = JC; sourceTree = "<group>"; };
 		5B4216781A6B7C40006EE452 /* JD */ = {isa = PBXFileReference; lastKnownFileType = file; path = JD; sourceTree = "<group>"; };
 		5B4216791A6B7C40006EE452 /* JH */ = {isa = PBXFileReference; lastKnownFileType = file; path = JH; sourceTree = "<group>"; };
@@ -219,6 +218,11 @@
 		5B4216821A6B7C40006EE452 /* QS */ = {isa = PBXFileReference; lastKnownFileType = file; path = QS; sourceTree = "<group>"; };
 		5B8A728E1A7A17D5006FBC44 /* SetCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCardView.h; sourceTree = "<group>"; };
 		5B8A728F1A7A17D5006FBC44 /* SetCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCardView.m; sourceTree = "<group>"; };
+		5BF542DD1B06E4430088162E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5BF542DF1B06E69B0088162E /* dollarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dollarIcon.png; sourceTree = "<group>"; };
+		5BF542E01B06E69B0088162E /* dollarIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dollarIcon@2x.png"; sourceTree = "<group>"; };
+		5BF542E31B06E6A30088162E /* gameIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameIcon.png; sourceTree = "<group>"; };
+		5BF542E41B06E6A30088162E /* gameIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gameIcon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,8 +275,7 @@
 				5B4215361A69F659006EE452 /* AppDelegate.h */,
 				5B4215371A69F659006EE452 /* AppDelegate.m */,
 				5B42153F1A69F659006EE452 /* Main.storyboard */,
-				5B4215421A69F659006EE452 /* Images.xcassets */,
-				5B4215441A69F659006EE452 /* LaunchScreen.xib */,
+				5BF542DD1B06E4430088162E /* Images.xcassets */,
 				5B4215321A69F659006EE452 /* Supporting Files */,
 			);
 			path = TwoInOneCardGame;
@@ -350,6 +353,10 @@
 		5B42155D1A69FDE0006EE452 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				5BF542DF1B06E69B0088162E /* dollarIcon.png */,
+				5BF542E01B06E69B0088162E /* dollarIcon@2x.png */,
+				5BF542E31B06E6A30088162E /* gameIcon.png */,
+				5BF542E41B06E6A30088162E /* gameIcon@2x.png */,
 				5B4216441A6B7C40006EE452 /* _about */,
 				5B4216451A6B7C40006EE452 /* _about2 */,
 				5B4216461A6B7C40006EE452 /* _cardback */,
@@ -400,7 +407,6 @@
 				5B4216731A6B7C40006EE452 /* AD */,
 				5B4216741A6B7C40006EE452 /* AH */,
 				5B4216751A6B7C40006EE452 /* AS */,
-				5B4216761A6B7C40006EE452 /* IconJoker.png */,
 				5B4216771A6B7C40006EE452 /* JC */,
 				5B4216781A6B7C40006EE452 /* JD */,
 				5B4216791A6B7C40006EE452 /* JH */,
@@ -530,18 +536,20 @@
 				5B4216A31A6B7C40006EE452 /* 7H in Resources */,
 				5B4216A21A6B7C40006EE452 /* 7D in Resources */,
 				5B4216A01A6B7C40006EE452 /* 6S in Resources */,
+				5BF542E11B06E69B0088162E /* dollarIcon.png in Resources */,
 				5B4216841A6B7C40006EE452 /* _about2 in Resources */,
 				5B4216BD1A6B7C40006EE452 /* KS in Resources */,
 				5B4216B21A6B7C40006EE452 /* AD in Resources */,
 				5B4216901A6B7C40006EE452 /* 2S in Resources */,
 				5B4216C01A6B7C40006EE452 /* QH in Resources */,
+				5BF542DE1B06E4430088162E /* Images.xcassets in Resources */,
 				5B4216B01A6B7C40006EE452 /* 10S in Resources */,
 				5B4216A71A6B7C40006EE452 /* 8H in Resources */,
-				5B4216B51A6B7C40006EE452 /* IconJoker.png in Resources */,
 				5B4216831A6B7C40006EE452 /* _about in Resources */,
 				5B4216AF1A6B7C40006EE452 /* 10H in Resources */,
 				5B4216931A6B7C40006EE452 /* 3H in Resources */,
 				5B42169C1A6B7C40006EE452 /* 5S in Resources */,
+				5BF542E51B06E6A30088162E /* gameIcon.png in Resources */,
 				5B4215411A69F659006EE452 /* Main.storyboard in Resources */,
 				5B4216911A6B7C40006EE452 /* 3C in Resources */,
 				5B4216941A6B7C40006EE452 /* 3S in Resources */,
@@ -552,11 +560,13 @@
 				5B4216871A6B7C40006EE452 /* _Corners in Resources */,
 				5B4216AC1A6B7C40006EE452 /* 9S in Resources */,
 				5B4216A61A6B7C40006EE452 /* 8D in Resources */,
+				5BF542E61B06E6A30088162E /* gameIcon@2x.png in Resources */,
 				5B4216851A6B7C40006EE452 /* _cardback in Resources */,
 				5B4216AA1A6B7C40006EE452 /* 9D in Resources */,
 				5B4216BC1A6B7C40006EE452 /* KH in Resources */,
 				5B42169E1A6B7C40006EE452 /* 6D in Resources */,
 				5B4216AE1A6B7C40006EE452 /* 10D in Resources */,
+				5BF542E21B06E69B0088162E /* dollarIcon@2x.png in Resources */,
 				5B42169D1A6B7C40006EE452 /* 6C in Resources */,
 				5B4216B71A6B7C40006EE452 /* JD in Resources */,
 				5B42168A1A6B7C40006EE452 /* _Numbers in Resources */,
@@ -566,7 +576,6 @@
 				5B42169A1A6B7C40006EE452 /* 5D in Resources */,
 				5B42168E1A6B7C40006EE452 /* 2D in Resources */,
 				5B4216A11A6B7C40006EE452 /* 7C in Resources */,
-				5B4215461A69F659006EE452 /* LaunchScreen.xib in Resources */,
 				5B4216A81A6B7C40006EE452 /* 8S in Resources */,
 				5B4216921A6B7C40006EE452 /* 3D in Resources */,
 				5B4216C11A6B7C40006EE452 /* QS in Resources */,
@@ -581,7 +590,6 @@
 				5B4216B31A6B7C40006EE452 /* AH in Resources */,
 				5B4216BA1A6B7C40006EE452 /* KC in Resources */,
 				5B4216B61A6B7C40006EE452 /* JC in Resources */,
-				5B4215431A69F659006EE452 /* Images.xcassets in Resources */,
 				5B4216891A6B7C40006EE452 /* _joker2 in Resources */,
 				5B4216961A6B7C40006EE452 /* 4D in Resources */,
 				5B4216AB1A6B7C40006EE452 /* 9H in Resources */,
@@ -649,14 +657,6 @@
 				5B4215401A69F659006EE452 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		5B4215441A69F659006EE452 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5B4215451A69F659006EE452 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -742,6 +742,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TwoInOneCardGame/TwoInOneCardGame-Prefix.pch";
 				INFOPLIST_FILE = TwoInOneCardGame/Info.plist;
@@ -754,6 +755,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TwoInOneCardGame/TwoInOneCardGame-Prefix.pch";
 				INFOPLIST_FILE = TwoInOneCardGame/Info.plist;

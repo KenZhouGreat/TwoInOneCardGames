@@ -34,6 +34,21 @@
     [self setNeedsDisplay];
 }
 
+- (void)setFaceUp:(BOOL)faceUp{
+    _faceUp = faceUp;
+    [self setNeedsDisplay];
+}
+
+- (void)setUnplayable:(BOOL)unplayable{
+    _unplayable = unplayable;
+    [self setNeedsDisplay];
+}
+
+- (void)setMatchStatus:(CardMatchStatus)matchStatus{
+    _matchStatus = matchStatus;
+    [self setNeedsDisplay];
+    
+}
 
 
 // Only override drawRect: if you perform custom drawing.
@@ -43,7 +58,15 @@
     //card frames
     UIBezierPath *framePath = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:5];
     [CLR_WASH_GREEN setStroke];
-    [[UIColor whiteColor] setFill];
+    
+    if (!self.faceUp) {
+        [[UIColor whiteColor] setFill];
+    }
+    else{
+        [[UIColor lightGrayColor] setFill];
+    }
+    
+    
     [framePath addClip];
     [framePath fill];
     
@@ -58,13 +81,13 @@
     
     //decide shade & colour
     CGFloat alphaComponent = 0;
-    if (self.shapeType == SetShadeNone) {
+    if (self.shadeType == SetShadeNone) {
         alphaComponent = 0;
     }
-    else if(self.shapeType == SetShadeSolid){
+    else if(self.shadeType == SetShadeSolid){
         alphaComponent = 1;
     }
-    else if(self.shapeType == SetShadeShadowed){
+    else if(self.shadeType == SetShadeShadowed){
         alphaComponent = 0.2;
     }
     //set fill & stroke
@@ -96,6 +119,40 @@
     [framePath stroke];
     [innerFramePath setLineWidth:2];
     [innerFramePath stroke];
+    
+    //set matchStatus display
+    if (self.matchStatus == MatchStatusMatched) {
+        //add a green mask
+        CGRect rect = self.bounds;
+        UIGraphicsBeginImageContext(rect.size);
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        
+        CGContextSetFillColorWithColor(context, [[UIColor colorWithRed:0/255.0 green:255.0/255.0 blue:0/255.0 alpha:0.5] CGColor]);
+        CGContextFillRect(context, rect);
+        
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        [image drawInRect:self.bounds];
+    }
+    else if (self.matchStatus == MatchedStatusUnmatched){
+        //add a red mask
+        //add a green mask
+        CGRect rect = self.bounds;
+        UIGraphicsBeginImageContext(rect.size);
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        
+        CGContextSetFillColorWithColor(context, [[UIColor colorWithRed:255.0/255.0 green:0/255.0 blue:0/255.0 alpha:0.5] CGColor]);
+        CGContextFillRect(context, rect);
+        
+        UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        [image drawInRect:self.bounds];
+    }
+    else{
+        //do nothing
+    }
 
     
 //    [[UIColor greenColor] setStroke];
@@ -343,5 +400,20 @@
     CGContextRestoreGState(UIGraphicsGetCurrentContext());
 }
 
+
+#pragma mark - initializer
+-(void)setUp{
+    
+}
+
+-(void)awakeFromNib{
+    [self setUp];
+}
+
+-(id)initWithFrame:(CGRect)frame{
+    self = [super initWithFrame:frame];
+    [self setUp];
+    return self;
+}
 
 @end
